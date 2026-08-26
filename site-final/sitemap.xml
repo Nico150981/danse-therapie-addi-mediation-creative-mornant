@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
-    <loc>https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+       <loc>https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/site-final/</loc>
+       <lastmod>2026-08-26T09:13:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/mouvement-vecu.html</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/site-final/mouvement-vecu.html</loc>
+       <lastmod>2026-08-26T09:13:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/ecoute-musicale.html</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/site-final/ecoute-musicale.html</loc>
+       <lastmod>2026-08-26T09:13:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/site-final/mentions-legales.html</loc>
+       <lastmod>2026-08-26T09:13:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/site-final/index.html</loc>
+       <lastmod>2026-08-26T09:13:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
   </url>
 </urlset>
