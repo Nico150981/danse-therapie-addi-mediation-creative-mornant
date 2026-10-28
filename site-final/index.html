@@ -329,4 +329,79 @@ FIN MASQUAGE -->
 </footer>
 
 <!-- Fenêtre affichant la grille tarifaire complète au clic ; un clic n'importe où la referme -->
-<div id="grille-tarifaire-modal" onclick="this.style.display='none';" style="display:none;
+<div id="grille-tarifaire-modal" onclick="this.style.display='none';" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:1000; align-items:center; justify-content:center; padding:2rem; cursor:zoom-out;">
+    <img src="images/Tarif_solidaire_2026_.png" alt="Grille tarifaire solidaire 2026" style="max-width:95%; max-height:90vh; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+</div>
+
+<script>
+// 1. Apparition des trois cartes "Se sentir..."
+document.addEventListener('DOMContentLoaded', function () {
+  var cartes = document.querySelectorAll('.ressenti-carte');
+  if (!('IntersectionObserver' in window)) {
+    cartes.forEach(function (c) { c.classList.add('est-visible'); });
+  } else {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('est-visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cartes.forEach(function (c) { obs.observe(c); });
+  }
+
+  // 2. Bouton son de la vidéo
+  var video = document.getElementById('heroVideo');
+  var son = document.getElementById('heroSound');
+  if (video && son) {
+    son.addEventListener('click', function () {
+      video.muted = !video.muted;
+      son.textContent = video.muted ? '🔇' : '🔊';
+      son.setAttribute('aria-pressed', String(!video.muted));
+      son.setAttribute('aria-label', video.muted ? 'Activer le son' : 'Couper le son');
+      if (!video.muted) { video.play(); }
+    });
+  }
+
+  // 3. Flèche "Découvrir le site"
+  var fleche = document.getElementById('heroScroll');
+  if (fleche) {
+    fleche.addEventListener('click', function () {
+      document.getElementById('accueil').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // 4. Carte : touche Entrée
+  var carte = document.getElementById('carte-lieu');
+  if (carte) {
+    carte.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { chargerCarte(); }
+    });
+  }
+
+  // 5. Formulaire de rappel : ouvre un e-mail pré-rempli
+  var form = document.getElementById('rappel-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var prenom = document.getElementById('rappel-prenom').value;
+      var creneau = document.getElementById('rappel-creneau').value;
+      var sujet = 'Demande de rappel';
+      var corps = 'Bonjour, je souhaite être rappelé(e).\nPrénom : ' + prenom + '\nCréneau : ' + creneau;
+      window.location.href = 'mailto:nicolaschochod@orange.fr?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corps);
+    });
+  }
+});
+
+// Carte Google Maps : chargée seulement au clic
+function chargerCarte() {
+  var c = document.getElementById('carte-lieu');
+  if (!c || c.querySelector('iframe')) { return; }
+  c.removeAttribute('onclick');
+  c.style.cursor = 'default';
+  c.innerHTML = '<iframe src="https://www.google.com/maps?q=17+rue+Waldwisse+69440+Mornant&output=embed" width="100%" height="400" style="border:0; border-radius:8px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte du lieu des séances"></iframe>';
+}
+</script>
+</body>
+</html>
