@@ -284,7 +284,7 @@ FIN MASQUAGE -->
     <!-- Image centrée avec une largeur maîtrisée pour éviter le flou -->
     <div style="display: flex; justify-content: center; margin-top: 2rem;">
         <img src="images/photo-contact.jpg" alt="Contact" style="max-width: 100%; height: auto; width: auto; max-height: 600px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-    </div><img src="images/visage%20nico.png" alt="Photo de Nicolas Charreyre" style="display:block; width:100%; max-width:200px; height:auto; margin:2rem auto 0;">
+    </div>
 
     <!-- Informations de contact -->
     <div class="texte">
@@ -295,6 +295,10 @@ FIN MASQUAGE -->
         <!-- MODIFICATION ICI : ajout du mot "individuelle" -->
         <p style="margin-top: 1rem; font-weight: 600;"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;" style="color: var(--accent); text-decoration: underline; cursor: pointer;">Grille tarifaire solidaire individuelle</a> : de 20 € à 80 € pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus (détail donné lors du premier contact)</p>
     </div>
+
+    <!-- Photo de Nicolas, placée ici, juste sous les coordonnées de contact -->
+    <img src="images/visage%20nico.png" alt="Photo de Nicolas Charreyre" style="display:block; width:100%; max-width:200px; height:auto; margin:2rem auto;">
+
     <!-- Formulaire de rappel : ouvre un e-mail pré-rempli, aucune donnée transmise à un tiers -->
     <div style="max-width: 420px; margin-top: 2.5rem;">
         <h3>Ou laissez-moi vous rappeler</h3>
@@ -310,7 +314,8 @@ FIN MASQUAGE -->
             <button type="submit" class="btn">Demander à être rappelé(e)</button>
         </form>
     </div>
-        <h3 style="margin-top: 3rem;">Où se déroulent les séances</h3>
+
+    <h3 style="margin-top: 3rem;">Où se déroulent les séances</h3>
     <div id="carte-lieu" class="map-embed" onclick="chargerCarte()" role="button" tabindex="0" style="display:flex; align-items:center; justify-content:center; background:#eee; border-radius:8px; cursor:pointer; min-height:400px;">
         <div style="text-align:center; padding:1.5rem;">
             <p style="margin-bottom:1rem;">🗺️ Carte masquée par défaut (respect de votre vie privée)</p>
